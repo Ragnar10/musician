@@ -1,0 +1,95 @@
+// Colors
+$blackHaze: rgba(0, 8, 12, .1); // header
+$blackHazeBg: #f5f6f6;
+$scorpion: #606060; // nav txt
+$black: #000000; // txt zagolovki
+$rollingStone: #798285; // txt bodzagolovochnih
+$silverChalice: #acacac; // txt statey
+$silver: rgba(0, 0, 0, 0.25);
+$white: #ffffff;
+$abbey: #565e61;
+$purple: #940aa6;
+$pictonBlue: #48c6ea;
+
+
+// concert linear-gradient -90
+$gulfStream: #8dbab3; // 100%
+$hippieBlue: #62a2ad;// 0%
+
+$bismark: #42717e; // txt upcoming
+$stormDust: #5b5c5a; //txt history
+$tundora: #454545; //txt contact
+$edward: #b0b3b3;
+
+// FA
+$fa-font-path: '../fontawesome/webfonts';
+
+// Fonts
+$primaryFont: 'OpenSansRegular', Arial, sans-serif;
+$primaryFontBold: 'OpenSansBold', Arial, sans-serif;
+$secondaryFont: 'DosisRegular', Arial, sans-serif;
+$secondaryFontBold: 'DosisBold', Arial, sans-serif;
+// Font size
+$navFontSize: 17px; // nav
+$sectionHeaderFontSize: 50.49px; // discography,...
+$descriptionFontSize: 14px; // txt statey, podzagolovkov, melkih nazvaniy
+$date-captionFontSize: $descriptionFontSize;
+$albumFontSize: $descriptionFontSize;
+$headlineFontSize: 23px; //zagolovki podstatey
+$sliderHeaderDescriptionFontSize: 18.49px;
+$trackNumberFontSize: 82.29px; // chisla trackov
+$trackNameLineFontSize: $headlineFontSize;
+$bigDateFontSize: 35.49px; // daty sobytiy
+// Font size tablet
+$tabletSectionHeaderFontSize: 74.5px; // discography,...
+$tabletDescriptionFontSize: 21px; // txt statey, podzagolovkov, melkih dat, melkih nazvaniy
+$tabletDate-captionFontSize: $tabletDescriptionFontSize;
+$tabletAlbumFontSize: $tabletDescriptionFontSize;
+$tabletHeadlineFontSize: 34px; //zagolovki podstatey
+$tabletSliderHeaderDescriptionFontSize: 27.65px;
+$tabletTrackNumberFontSize: 124.96px; // chisla trackov
+$tabletTrackNameLineFontSize: $tabletHeadlineFontSize;
+$tabletBigDateFontSize: 53.03px; // daty sobytiy
+// Font size mobile
+$mobileSectionHeaderFontSize: $sectionHeaderFontSize; // discography,...
+$mobileDescriptionFontSize: 15px; // txt statey, podzagolovkov, melkih dat, melkih nazvaniy
+$mobileDate-captionFontSize: $mobileDescriptionFontSize;
+$mobileAlbumFontSize: $mobileDescriptionFontSize;
+$mobileHeadlineFontSize: $headlineFontSize; //zagolovki podstatey
+$mobileSliderHeaderDescriptionFontSize: 17px;
+$mobileTrackNumberFontSize: 100.5px; // chisla trackov
+$mobileTrackNameFontSize: $headlineFontSize;
+$mobileBigDateFontSize: $bigDateFontSize; // daty sobytiy
+
+// Line height desktop 
+$descriptionLineHeight: 24.27px; 
+$albumLineHeight: $descriptionLineHeight;
+$headlineLineHeight: 35.27px;
+$sliderHeaderDescriptionLineHeight: 26.27px;
+$trackNameLineLineHeight: $descriptionLineHeight;
+$trackNumberLineLineHeight: 142.62px;
+// Line height table
+$tabletDescriptionLineHeight:36px;
+$tabletAlbumLineHeight: $tabletDescriptionLineHeight;
+$tabletHeadlineLineHeight: 52.92px;
+$tabletSliderHeaderDescriptionLineHeight: 39.28px;
+$tabletTrackNameLineLineHeight: 36.5px;
+// Line height mobile
+$mobileDescriptionLineHeight: $descriptionLineHeight;
+$mobileAlbumLineHeight: $mobileDescriptionLineHeight;
+$mobileHeadlineLineHeight: 30px;
+$mobileSliderHeaderDescriptionLineHeight: $sliderHeaderDescriptionLineHeight;
+$mobileTrackNameLineHeight: $mobileHeadlineLineHeight;
+
+// Letter spacing
+$navLetterSpacing: 118 * 22px / 1000;
+$headlineSectionLetterSpacing: $navLetterSpacing;
+$descriptionLetterSpacing: $navLetterSpacing; 
+$sliderHeaderDescriptionLetterSpacing: $navLetterSpacing;
+$bigDateLetterSpacing: $navLetterSpacing;
+$albumLetterSpacing: 18 * 22px / 1000;
+$headlineLetterSpacing: $albumLetterSpacing;
+$trackNameLetterSpacing: $albumLetterSpacing; 
+$titleLetterSpacing: 1 * 22px / 1000;
+
+$headerHeight: 62px;

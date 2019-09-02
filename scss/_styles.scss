@@ -1,0 +1,1557 @@
+body {
+  font: 14px/24.27px $primaryFont;
+  width: 100%;
+  letter-spacing: $navLetterSpacing;
+}
+.flex {
+	display: flex;
+}
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+/*Шапка*/
+.header {
+	width: 100%;
+	height: $headerHeight;
+	background: $headerBg;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	&__col {
+		@include make-lg-column(12);
+	}
+}
+/*Нав меню*/
+.main-nav {
+	display: flex;
+	height: $headerHeight;
+	justify-content: space-between;
+	&__item {
+		display: inline-flex;
+		align-items: center;
+	}
+	&__link {
+		font: $navFontSize $secondaryFont;
+		color: $navTextColor;
+		text-transform: uppercase;
+		&:link {
+			text-decoration: none;
+		}
+		&:hover {
+			color: $headlineTextColor;
+	  		border-bottom: 2px solid $headlineTextColor;
+	  		text-decoration: none;
+		}   
+	}
+}
+/*Hamburger menu*/
+.hamburger-input {
+	display: none;
+}
+.hamburger-nav {
+	display: none;
+	color: $borderButton;
+	@extend %fa-icon;
+	@extend .fas;
+	&::before {
+		content: fa-content($fa-var-bars);
+		font-size: 40px;
+	}
+}
+.nav {
+	display: none;
+}
+/*Основной контент*/
+.main {
+}
+.banner-header {
+  background: url(../images/header_bg.png) no-repeat center top;
+  height: 1062px;
+}
+/*discography*/
+.discography {
+	min-height: 1000px;
+	background: url(../images/discography-banner_bg.png) no-repeat center bottom;
+	background-size: contain;
+	padding-bottom: 350px;
+	text-align: center;
+	&__heading {
+		@include make-lg-column(8);
+		@include make-lg-column-offset(2); 
+	}
+	&__header {
+		background: url(../images/discography_bg.png) no-repeat 0 85%;
+		-webkit-background-clip: text;
+		background-size: auto;   
+		-webkit-text-fill-color: transparent;
+		@include sectionHeader();
+	}	
+	&__header-description {
+		@include descriptionHeader();
+	}
+}	
+/*discography -- альбомы*/
+.album {
+	@include make-lg-column(12);
+	text-align: left;
+	margin-bottom: 95px;
+	&__heading {
+		@include make-lg-column(7);
+		@include make-lg-column-offset(5);
+		margin-bottom: 25px;
+	}
+	&__header {
+		font-size: $headlineFontSize;
+		line-height: $headlineLineHeight;
+		letter-spacing: $albumLetterSpacing;
+		color: $headlineTextColor;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	&__date-title {
+		@include make-lg-column(5);	
+	}
+	&__date {
+		position: relative;
+		margin-top: -25px;
+		font-family: $primaryFontBold;
+		letter-spacing: $titleLetterSpacing;
+		color: $headlineTextColor;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 1px;
+			background: $headlineTextColor;
+			width: 100%;
+			left: 0;
+			top: 26.5px;
+		}
+	}	
+	&__title {
+		font-family: $primaryFontBold;
+		text-transform: uppercase;
+		letter-spacing: $titleLetterSpacing;
+	}
+	&__description {
+		@include make-lg-column(7);
+	}
+	&__description-txt {
+		letter-spacing: $albumLetterSpacing;
+		color: $albumTextColor;
+		@include ellipsis(5, $descriptionLineHeight);
+		margin-bottom: 22px;
+	}
+	&__link {
+		@include linkForButton();
+	}
+	&__link-button {
+		@include linkButton();
+	}
+	&__link-button--bg1 {
+			background: url(../images/button-discography1_bg.png) no-repeat;
+			color: $normalTextColor;
+	}
+	&__link-button--bg2 {
+			background: url(../images/button-discography2_bg.png) no-repeat;
+	}
+	&__link-button--bg3 {
+			background: url(../images/button-discography3_bg.png) no-repeat;
+	}
+}	
+/*Concert tours*/
+.concert-tours {
+	min-height: 1250px;
+	background: url(../images/concert_bg.png) no-repeat center bottom;
+	background-size: contain;
+	text-align: center;
+	&__heading {
+		@include make-lg-column(8);
+		@include make-lg-column-offset(2); 
+	}
+	&__header {
+		@include sectionHeader($headlineTextColor,165px);
+		background: linear-gradient(to bottom,$hippieBlue 0%, $gulfStream 100%);
+		-webkit-background-clip: text;   
+		-webkit-text-fill-color: transparent;
+		&::before {
+			top: 87%;
+		}
+	}	
+	&__header-description {
+		@include descriptionHeader(120px);
+	}
+}	
+.tour {
+	@include make-lg-column(12);
+	text-align: left;
+	margin-top: 355px;
+	&__heading {
+		@include make-lg-column(2);
+		order: 2;
+		margin-bottom: 30px;
+	}
+	&__header {
+		font-size: $headlineFontSize;
+		line-height: $descriptionLineHeight;
+		letter-spacing: $albumLetterSpacing;
+		color: $headlineTextColor;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	&__date-title {
+		@include make-lg-column(4);
+		order: 1;
+		margin-bottom: 90px;
+	}
+	&__date {
+		position: relative;
+		margin-top: -25px;
+		font-family: $primaryFontBold;
+		letter-spacing: $titleLetterSpacing;
+		color: $headlineTextColor;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 1px;
+			background: $headlineTextColor;
+			width: 100%;
+			left: 0;
+			top: 26.5px;
+		}
+	}	
+	&__title {
+		font-family: $primaryFontBold;
+		text-transform: uppercase;
+		letter-spacing: $titleLetterSpacing;
+	}
+	&__description {
+		@include make-lg-column(7);
+		order: 3;
+		margin-bottom: 50px;
+	}
+	&__description-txt {
+		letter-spacing: $albumLetterSpacing;
+		color: $descriptionTextColor;
+		padding-bottom: 40px;
+		margin-bottom: 0;
+	}
+	&__link {
+		@include linkForButton();
+	}
+	&__link-button {
+		@include linkButton(transparent, none, 1px solid $borderButton);
+	}
+	.angle-icon{
+		@extend %fa-icon;
+		@extend .fas;
+		&::after {
+			content: fa-content($fa-var-angle-right);
+			margin-left: 15px;
+			color: $black;
+		}
+	}
+}
+/*Latter compositions*/
+.latter-compositions {
+	min-height: 2000px;
+	text-align: center;
+	padding-bottom: 160px;
+	&__heading {
+		@include make-lg-column(8);
+		@include make-lg-column-offset(2); 
+	}
+	&__header {
+		@include sectionHeader($headlineTextColor,165px);
+		&::before {
+			top: 87%;
+		}
+	}	
+	&__header-description {
+		@include descriptionHeader(165px);
+	}
+}	
+.video {
+	@include make-lg-column(12);
+	text-align: left;
+	&__info {
+		@include make-lg-column(6);
+		background: $videoInfoBg;
+		margin-bottom: 55px;
+		padding: 0;
+		position: relative;
+		&::before {
+		    content: "";
+		    display: inline-block;
+		    position: absolute;
+		    box-sizing: content-box;
+		    top: 50%;
+		    left: 100%;
+		    width: 0;
+		    height: 0;
+		    border-style: solid;
+		    border-width: 11px 0 11px 13px;
+		    border-color: transparent transparent transparent $videoInfoBg;
+		    z-index: 99;
+		}
+	}
+	&__info--reverse {
+		order: 2;
+		&::before {
+		    content: "";
+		    display: inline-block;
+		    position: absolute;
+		    box-sizing: content-box;
+		    top: 50%;
+		   	left: -13px;
+		    width: 0;
+		    height: 0;
+		    border-style: solid;
+		    border-width: 11px 13px 11px 0;
+		    border-color: transparent  $videoInfoBg transparent transparent;
+		    z-index: 11;
+		}
+	}
+	&__clips {
+		@include make-lg-column(6);
+		margin-bottom: 55px;
+		padding: 0;
+	}
+	&__clip {
+		@include make-lg-column(12);
+		margin-bottom: 55px;
+		padding: 0;
+		height: 100%; 
+	}
+	&__heading {
+		@include make-lg-column(10);
+		@include make-lg-column-offset(1);
+		order: 2;
+		margin-top: 45px;
+	}
+	&__header {
+		font-size: $headlineFontSize;
+		letter-spacing: $albumLetterSpacing;
+		color: $headlineTextColor;
+		line-height: $descriptionLineHeight;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	&__date-title {
+		@include make-lg-column(8);
+		@include make-lg-column-offset(1);
+		order: 1;
+		margin-top: 35px;
+	}
+	&__date {
+		position: relative;
+		margin-top: -25px;
+		font-family: $primaryFontBold;
+		letter-spacing: $titleLetterSpacing;
+		color: $headlineTextColor;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 1px;
+			background: $headlineTextColor;
+			width: 100%;
+			left: 0;
+			top: 26.5px;
+		}
+	}	
+	&__title {
+		font-family: $primaryFontBold;
+		text-transform: uppercase;
+		letter-spacing: $titleLetterSpacing;
+	}
+	&__description {
+		@include make-lg-column(11);
+		@include make-lg-column-offset(1);
+		order: 3;
+		padding: 0;
+		margin-top: 35px;
+	}
+	&__description-txt {
+		letter-spacing: $albumLetterSpacing;
+		color: $descriptionTextColor;
+		margin-bottom: 60px;
+		@include make-lg-column(11);
+		@include ellipsis(3, $descriptionLineHeight);
+	}
+	&__link {
+		@include linkForButton();
+		@include make-lg-column(5);
+		margin-bottom: 35px;
+		padding: 0;
+	}
+	&__link-button {
+		@include linkButton(transparent, none, 1px solid $borderButton);
+	}
+	.angle-icon{
+		@extend %fa-icon;
+		@extend .fas;
+		&::after {
+			content: fa-content($fa-var-angle-right);
+			margin-left: 15px;
+			color: $black;
+		}
+	}
+}
+.social-icons {
+	list-style-type: none;
+	@include make-lg-column(7);
+	padding: 0;
+	padding-top: 27px;
+	margin: 0;
+	margin-bottom: 35px;
+
+	&__icon {
+		display: inline-block;
+		margin-right: 20px;
+	}
+	&__volume {
+ 		color: $albumTextColor;
+  		display: block;
+  		letter-spacing: $titleLetterSpacing;
+  		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+		@extend %fa-icon;
+		@extend .fas;
+		&::before {
+		    content: fa-content($fa-var-volume-down);
+		    margin-right: 10px;
+			color: $albumTextColor;
+			font-size: $navFontSize;
+		}
+	}	
+	&__like {
+ 		color: $albumTextColor;
+  		display: block;
+  		letter-spacing: $titleLetterSpacing;
+  		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+		@extend %fa-icon;
+	  	@extend .fas;
+		&::before {
+			content: fa-content($fa-var-heart);
+			margin-right: 10px;
+			color: $albumTextColor;
+			font-size: $navFontSize;
+		}
+	}		
+	&__share {
+ 		color: $albumTextColor;
+  		display: block;
+  		letter-spacing: $titleLetterSpacing;
+  		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+		@extend %fa-icon;
+	  	@extend .fas;
+		&::before {
+			content: fa-content($fa-var-share-square);
+			margin-right: 10px;
+			color: $albumTextColor;
+			font-size: $navFontSize;
+		}
+	}	
+	&__comments {
+		text-decoration: none;
+ 		color: $albumTextColor;
+  		display: block;
+  		letter-spacing: $titleLetterSpacing;
+		&:hover {
+			text-decoration: none;
+		}
+		@extend %fa-icon;
+	  	@extend .fas;
+		&::before {
+			content: fa-content($fa-var-comment-alt);
+			margin-right: 10px;
+			color: $albumTextColor;
+			font-size: $navFontSize;
+		}
+	}
+}
+/*Slider*/
+.slider {
+	min-height: 642px;
+	background: url(../images/slider_bg.png) no-repeat center bottom;
+	background-size: cover;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	&__btn-left {
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg); 
+		transform: rotate(45deg);
+		width: 120px;
+		height: 120px;
+		padding: 0;
+		background: $normalTextColor;
+		position: absolute;
+		top: 45%;
+		left: -85px;
+		border: none;
+		outline: none;
+		.angle-icon{
+			z-index: -1;
+			@extend %fa-icon;
+			@extend .fas;
+			&::after {
+				content: fa-content($fa-var-angle-left);
+				color: $black;
+				font-size: 22px;
+				font-weight: bolder;
+				-webkit-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg); 
+				transform: rotate(-45deg);
+				display: block;
+				margin-bottom: 85px;
+				margin-left: 85px;
+			}
+		}	
+	}
+	&__btn-right {
+		-webkit-transform: rotate(225deg);
+		-ms-transform: rotate(225deg); 
+		transform: rotate(225deg);
+		width: 120px;
+		height: 120px;
+		padding: 0;
+		background: $normalTextColor;
+		position: absolute;
+		top: 45%;
+		right: -85px;
+		border: none;
+		outline: none;
+		.angle-icon{
+			z-index: -1;
+			@extend %fa-icon;
+			@extend .fas;
+			&::after {
+				content: fa-content($fa-var-angle-left);
+				color: $black;
+				font-size: 22px;
+				font-weight: bolder;
+				-webkit-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg); 
+				transform: rotate(-45deg);
+				display: block;
+				margin-bottom: 85px;
+				margin-left: 85px;
+			}
+		}	
+	}
+	&__label {
+		width: 128px;
+		height: 29px;
+		margin-top: 160px; 
+		background: url(../images/label-music_bg.png) no-repeat center bottom;
+		background-size: contain;
+		@include make-lg-column(2);
+		@include make-lg-column-offset(5);
+	}
+	&__heading {
+		@include make-lg-column(10);
+		@include make-lg-column-offset(1);
+		margin-top: 45px;  
+	}
+	&__header {
+		font-family: $secondaryFont;
+		font-size: $sliderHeaderDescriptionFontSize;
+		letter-spacing: $navLetterSpacing;
+		line-height: $sliderHeaderDescriptionLineHeight;
+		color: $normalTextColor;
+		text-transform: uppercase;
+		@include make-lg-column(12);
+		padding-bottom: 45px;
+		margin: 0;
+	}	
+	&__header-description {
+		@include make-lg-column(8);
+		@include make-lg-column-offset(2);
+		color: $descriptionTextColor;
+		@include ellipsis(3, $descriptionLineHeight);
+	}
+	&__years {
+		@include make-lg-column(4);
+		@include make-lg-column-offset(4); 
+		color: $sliderYearsTextColor;
+		margin-top: 70px;
+	}
+	&__list {
+		@include make-lg-column(2);
+		@include make-lg-column-offset(5); 
+		background: url(../images/list_bg.png) no-repeat center bottom;
+		background-size: contain;
+		margin-top: 80px;
+		width: 109px;
+		height: 11px;
+	}
+}
+/*New tracks*/	
+.new-tracks {
+	margin-top: 165px;
+	margin-bottom: 125px;
+	&__col {
+		height: 420px;
+		@include make-lg-column(4);
+		background: $videoInfoBg;
+		margin-bottom: 30px;
+		padding: 0;
+		overflow: hidden;
+	}
+	&__col--margin {
+		border-right: 20px solid $white;
+		box-sizing: border-box;
+  		background-clip: padding-box;
+	}
+	&__col--bg1 {
+		background: url(../images/new1_bg.png) no-repeat 30% bottom;
+		background-size: cover;
+	}
+	&__col--bg2 {
+		background: url(../images/new2_bg.png) no-repeat 65% 85%;
+		background-size: auto;
+	}
+	&__col--bg3 {
+		background: url(../images/new3_bg.png) no-repeat 30% bottom;
+		background-size: cover;
+	}
+	&__col--bg4 {
+		background: url(../images/new4_bg.png) no-repeat 60% 50%;
+		background-size: auto;
+	}
+	&__col--bg5 {
+		background: url(../images/new5_bg.png) no-repeat 47% 50%;
+		background-size: cover;
+	}
+	&__col--bg6 {
+		background: url(../images/new6_bg.png) no-repeat 1% 40%;
+		background-size: auto;
+	}
+	&__heading {
+		@include make-lg-column(10);
+		@include make-lg-column-offset(1);
+		order: 2;
+		margin-top: 45px;
+	}
+	&__header {
+		font-size: $headlineFontSize;
+		letter-spacing: $albumLetterSpacing;
+		color: $headlineTextColor;
+		line-height: $descriptionLineHeight;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	&__date-title {
+		@include make-lg-column(10);
+		@include make-lg-column-offset(1);
+		order: 1;
+		margin-top: 35px;
+	}
+	&__date {
+		position: relative;
+		margin-top: -25px;
+		font-family: $primaryFontBold;
+		letter-spacing: $titleLetterSpacing;
+		color: $headlineTextColor;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 1px;
+			background: $headlineTextColor;
+			width: 100%;
+			left: 0;
+			top: 26.5px;
+		}
+	}	
+	&__title {
+		font-family: $primaryFontBold;
+		color: $normalTextColor;
+		text-transform: uppercase;
+		letter-spacing: $titleLetterSpacing;
+	}
+	&__description {
+		@include make-lg-column(10);
+		@include make-lg-column-offset(1);
+		order: 3;
+		padding: 0;
+		margin-top: 60px;
+	}
+	&__description--twoLine {
+		margin-top: 40px;
+	}
+	&__description-txt {
+		letter-spacing: $albumLetterSpacing;
+		color: $descriptionTextColor;
+		@include make-lg-column(11);
+		margin: 0;
+	}
+	&__description-txt--showFourLine {
+		@include ellipsis(4, $descriptionLineHeight);
+	}
+	&__description-txt--showSevenLine {
+		@include ellipsis(7, $descriptionLineHeight);
+	}
+	&__description-txt--showOneLine {
+		@include ellipsis(1, $descriptionLineHeight);
+	}
+	&__number {
+		@include make-lg-column(3);
+		@include make-lg-column-offset(8);
+		font-family: $primaryFontBold;
+		font-size: $trackNumberFontSize;
+		letter-spacing: $titleLetterSpacing;
+		line-height: $trackNumberLineLineHeight;
+		color: $TrackNumberTextColor;
+		padding: 0;
+		margin-top: 90px;
+		order: 4;
+	}
+	&__number--marginTopSeven {
+		margin-top: 50px;
+	}
+	&__number--marginTopOne {
+		margin-top: 140px;
+	}
+}	
+/*Upcoming events*/
+.upcoming-events {
+	min-height: 1200px;
+	background: url(../images/upcoming-events_bg.png) no-repeat center bottom;
+	background-size: contain;
+	&__col {
+		@include make-lg-column(12);
+	}
+	&__heading {
+		@include make-lg-column(6);
+		@include make-lg-column-offset(6); 
+		margin-bottom: 120px;
+	}
+	&__header {
+		@include sectionHeader($upcomingEventsTextColor,210px);
+		margin-left: -22px;
+		&::before {
+			top: 89%;
+		}
+	}
+	&__title {
+		@include make-lg-column(6);
+		@include make-lg-column-offset(6);
+		margin-bottom: 35px;
+	}
+	&__title-header {
+		font-size: $headlineFontSize;
+		line-height: $descriptionLineHeight;
+		letter-spacing: $albumLetterSpacing;
+		color: $headlineTextColor;
+		margin: 0;
+		position: relative;
+		margin-top: -24px;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 1px;
+			background: $headlineTextColor;
+			width: 25%;
+			left: 0;
+			top: 40px;
+		}
+	}	
+	&__adress {
+		@include make-lg-column(4);
+		@include make-lg-column-offset(6);
+		margin-bottom: 80px;
+		letter-spacing: $albumLetterSpacing;
+	}
+	&__description {
+		@include make-lg-column(6);
+		@include make-lg-column-offset(6);
+		margin-bottom: 80px;
+	}
+	&__description-txt {
+		letter-spacing: $albumLetterSpacing;
+		color: $descriptionTextColor;
+		@include ellipsis(5, $descriptionLineHeight);
+		margin: 0;
+	}
+	&__date {
+		@include make-lg-column(6);
+		@include make-lg-column-offset(6);
+		font-family: $primaryFontBold;
+		letter-spacing: $titleLetterSpacing;
+		color: $headlineTextColor;
+		margin-bottom: 25px;
+		position: relative;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 50px;
+			background: $headlineTextColor;
+			width: 1px;
+			left: 7%;
+			top: -65px;
+		}
+	}
+	&__line-down {
+		display: block;
+		@include make-lg-column(6);
+		@include make-lg-column-offset(6);
+		position: relative;
+		height: 190px;
+		margin: 0;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 165px;
+			background: $headlineTextColor;
+			width: 1px;
+			left: 7%;
+			bottom: 39px;
+		}
+	}
+}	
+/*History*/
+.history {
+	min-height: 1250px;
+	background: url(../images/history_bg.png) no-repeat center bottom;
+	background-size: contain;
+	text-align: center;
+	&__heading {
+		@include make-lg-column(8);
+		@include make-lg-column-offset(2); 
+	}
+	&__header {
+		@include sectionHeader($historyTextColor,165px);
+		&::before {
+			top: 87%;
+		}
+	}	
+	&__header-description {
+		@include descriptionHeader(200px);
+	}
+	&__calendar {
+		list-style-type: none;
+		padding: 0;
+		margin: 0 auto;
+	}
+	&__indent {
+		display: inline-block;
+		height: 24px;
+		width: 80px;
+		padding: 0;
+		margin: 0 10px;
+		position: relative;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 1px;
+			background: $historyTextColor;
+			width: 80px;
+			right: 0;
+			top: 50%;
+		}
+	}
+	&__date {
+		color: $edward;
+		font-size: $bigDateFontSize;
+		letter-spacing: $navLetterSpacing;
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		margin-right: 100px;
+		text-transform: uppercase;
+		position: relative;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 1px;
+			background: $historyTextColor;
+			width: 80px;
+			left: 110%;
+			bottom: 50%;
+		}
+		&:hover {
+			color: $sliderYearsTextColor;
+		}
+	}
+	&__info {
+		color: $historyTextColor;
+		@include make-lg-column(2);
+		@include make-lg-column-offset(5);
+		margin-top: 45px;
+		line-height: 20px;
+	}
+}
+/*Contacts*/
+.contacts {
+	min-height: 1250px;
+	background: url(../images/contact_bg.png) no-repeat center bottom;
+	background-size: contain;
+	&__heading {
+		@include make-lg-column(6);
+		@include make-lg-column-offset(6); 
+	}
+	&__header {
+		@include sectionHeader($historyTextColor,270px);
+		margin-left: -22px;
+		&::before {
+			top: 91%;
+		}
+	}	
+	&__adress {
+		@include make-lg-column(4);
+		@include make-lg-column-offset(6);
+		margin-top: 40px;
+		margin-bottom: 80px;
+		letter-spacing: $titleLetterSpacing;
+	}
+	&__form {
+		@include make-lg-column(4);
+		@include make-lg-column-offset(6);
+	}
+	 %resetInput {
+		outline: none;
+		margin-bottom: 50px;
+	}
+	&__input {
+		@extend %resetInput;
+		border: none;
+		border-bottom: 1px solid $black; 
+	}
+	&__button {
+		width: 70px;
+		height: 40px;
+		@extend %resetInput;
+		background: transparent;
+		text-align: left;
+		font-family: $primaryFontBold;
+		color: $headlineTextColor;
+		font-size: 20px;
+		letter-spacing: $titleLetterSpacing;
+		text-transform: uppercase;
+		border: none;
+		&:active {
+			-webkit-box-shadow: inset 1px 1px 1px $silverChalice, inset 0 -3px  1px $silverChalice;
+			-box-shadow: inset 1px 1px 1px $silverChalice,inset 0 -3px  1px $silverChalice;
+			-webkit-border-radius: 10px/10px;
+			border-radius: 10px/10px;
+			background-color: $blackHazeBg;
+		}
+		&:hover {
+			-webkit-border-radius: 10px/10px;
+			border-radius: 10px/10px;
+			background-color: $blackHazeBg;
+		}
+	}
+	&__socials {
+		@include make-lg-column(1);
+		@include make-lg-column-offset(1);
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 100%;
+			background: $headlineTextColor;
+			width: 1px;
+			left: 0;
+			bottom: 0;
+		}
+	}
+	&__socials-icons {
+		margin: 0;
+	}
+	&__icon {
+		text-align: center;
+		margin-bottom: 70px;
+	}
+	&__icon--noIndent {
+		margin-bottom: 0;
+	}
+	&__facebook {
+		text-decoration: none;
+		color: $headlineTextColor;
+  		display: block;
+		&:hover {
+			text-decoration: none;
+		}
+		@extend %fa-icon;
+	  	@extend .fab;
+		&::before {
+			content: fa-content($fa-var-facebook-f);
+			font-size: 24px;
+		}
+	}
+	&__insta {
+		text-decoration: none;
+		color: $headlineTextColor;
+  		display: block;
+		&:hover {
+			text-decoration: none;
+			color: $instaColor;
+		}
+		@extend %fa-icon;
+	  	@extend .fab;
+		&::before {
+			content: fa-content($fa-var-instagram);
+			font-size: 24px;
+		}
+	}
+	&__twitter {
+		text-decoration: none;
+  		display: block;
+  		color: $headlineTextColor;
+		&:hover {
+			text-decoration: none;
+			color: $twitterColor;
+		}
+		@extend %fa-icon;
+	  	@extend .fab;
+		&::before {
+			content: fa-content($fa-var-twitter);
+			font-size: 24px;
+		}
+	}
+}	
+@media all and (min-width: 1224px)  and (max-width: 1399px) {
+/*Header*/	
+	.header {
+		display: none;
+	}
+/*Hamburger menu*/	
+	.hamburger-input {
+		display: none;
+	}
+	.hamburger-nav {
+		display: inline-block;
+		position: absolute;
+		top: 50px;
+		right: 80px;
+	}
+	.hamburger-input:checked ~ .nav {
+		display: block;
+		position: absolute;
+		top: 50px;
+		right: 120px;
+	}
+	.nav {
+		&__item {
+			display: inline-block;
+		}
+		&__link {
+			font: $navFontSize $secondaryFont;
+			color: $navTextColor;
+			text-transform: uppercase;
+			&:link {
+				text-decoration: none;
+				padding: 5px 0;
+			}	
+			&:hover {
+	  			text-decoration: none;
+	  			color: $navTextColor;
+	  		}	
+		}
+	}
+	/*discography*/
+	.discography {
+		text-align: center;
+		&__heading {
+			@include make-md-column(10);
+			@include make-md-column-offset(1); 
+		}
+	}	
+	/*discography -- альбомы*/
+	.flex-columnMd {
+		display: flex;
+		flex-direction: column;
+	}	
+	.album {
+		@include make-md-column(12);
+		text-align: left;
+		margin-bottom: 150px;
+		&__heading {
+			@include make-md-column(8);
+			@include make-md-column-offset(1);
+			order: 2;
+			margin-bottom: 50px;
+		}
+		&__date-title {
+			@include make-md-column(10);
+			@include make-md-column-offset(1);	
+			order: 1;
+			margin-bottom: 65px;
+		}
+		&__description {
+			@include make-md-column(10);
+			@include make-md-column-offset(1);
+			order: 3;
+		}
+		&__link {
+			margin: 50px auto 0;
+		}		
+	}
+/*Concert tours*/	
+	.concert-tours {
+		&__heading {
+			@include make-md-column(12); 
+		}
+		&__header {
+			margin-left: auto;
+			margin-right: auto;
+		}	
+	}	
+	.tour {
+		&__heading {
+			@include make-md-column(3);
+			@include make-md-column-offset(1);
+		}
+		&__date-title {
+			@include make-md-column(6);
+			@include make-md-column-offset(1);
+		}
+		
+		&__description {
+			@include make-md-column(9);
+			@include make-md-column-offset(1);
+		}
+	}
+/*Latter compositions*/
+	.latter-compositions {
+		&__heading {
+			@include make-md-column(10);
+			@include make-md-column-offset(1); 
+		}
+	}	
+	.flex {
+		display: block;
+	}
+	.video {
+		@include make-md-column(12);
+		&__info {
+			@include make-md-column(12);
+			margin-bottom: 0;
+			&::before {
+			    top: 100%;
+			    left: 50%;
+			    border-width: 13px 11px  0 11px;
+			    border-color: $videoInfoBg transparent transparent transparent;
+			}
+		}
+		&__clips {
+			@include make-md-column(12);
+			margin-bottom: 0;
+			padding: 0;
+		}
+		&__clip {
+			width: 100%;
+			height: 500px;
+		}
+		&__heading {
+			@include make-md-column(10);
+			@include make-md-column-offset(1);
+		}
+		&__date-title {
+			@include make-md-column(8);
+			@include make-md-column-offset(1);
+		}
+		&__description {
+			@include make-md-column(10);
+			@include make-md-column-offset(1);
+			padding: 0;
+		}
+		&__link {
+			@include make-md-column(4);
+		}
+	}
+	.social-icons {
+		@include make-md-column(7);
+	}
+	/*Slider*/
+	.slider {
+		&__label {
+			@include make-md-column(2);
+			@include make-md-column-offset(5);
+		}
+		&__heading {
+			@include make-md-column(12);  
+		}
+		&__header {	
+			@include make-md-column(12);
+		}	
+		&__header-description {
+			@include make-md-column(8);
+			@include make-md-column-offset(2);
+		}
+		&__years {
+			@include make-md-column(4);
+			@include make-md-column-offset(4); 
+		}
+		&__list {
+			@include make-md-column(2);
+			@include make-md-column-offset(5); 
+		}
+	}
+/*New tracks*/	
+	.new-tracks {
+		&__col {
+			@include make-md-column(6);
+		}
+		&__col:nth-child(2n + 1) {
+			border-right: 30px solid $white;
+			box-sizing: border-box;
+	  		background-clip: padding-box;
+		}
+		&__col--margin {
+			border-right: none;
+		}
+		&__heading {
+			@include make-md-column(10);
+			@include make-md-column-offset(1);
+		}
+		&__date-title {
+			@include make-md-column(10);
+			@include make-md-column-offset(1);
+		}
+		&__description {
+			@include make-md-column(10);
+			@include make-md-column-offset(1);
+		}
+		&__description-txt {
+			@include make-md-column(12);
+			padding: 0;
+		}
+		&__number {
+			@include make-md-column(2);
+			@include make-md-column-offset(9);
+		}
+		&__number--marginTopThreeMd {
+			margin-top: 105px;
+		}
+		&__number--marginTopSevenMd {
+			margin-top: 65px;
+		}
+	}	
+/*Upcoming events*/	
+	.upcoming-events {
+		&__col {
+			@include make-md-column(7);
+			@include make-md-column-offset(5);
+		}
+	}
+/*History*/
+	.history {
+		&__heading {
+			@include make-md-column(12); 
+		}
+		&__header {
+			margin-left: auto;
+			margin-right: auto;
+		}	
+		&__header-description {
+			@include descriptionHeader(200px);
+		}
+		&__date--hiddenMd {
+			display: none;
+		}
+		&__info {
+			@include make-md-column(4);
+			@include make-md-column-offset(4);
+		}
+	}
+	/*Contacts*/
+	.contacts {
+		&__heading {
+			@include make-md-column(4);
+			@include make-md-column-offset(4); 
+		}	
+		&__adress {
+			@include make-md-column(6);
+			@include make-md-column-offset(4);
+		}
+		&__form {
+			@include make-md-column(6);
+			@include make-md-column-offset(4);
+		}
+		&__socials {
+			@include make-md-column(1);
+			@include make-md-column-offset(1);
+		}
+	}		
+}
+@media all and (min-width: 768px)  and (max-width: 1223px) {
+/*Header*/	
+	.header {
+		display: none;
+	}
+/*Hamburger menu*/	
+	.hamburger-input {
+		display: none;
+	}
+	.hamburger-nav {
+		display: inline-block;
+		position: absolute;
+		top: 50px;
+		right: 60px;
+	}
+	.hamburger-input:checked ~ .nav {
+		display: block;
+		position: absolute;
+		top: 50px;
+		right: 100px;
+	}
+	.nav {
+		&__item {
+			display: inline-block;
+		}
+		&__link {
+			font: $navFontSize $secondaryFont;
+			color: $navTextColor;
+			text-transform: uppercase;
+			&:link {
+				text-decoration: none;
+				padding: 5px 0;
+			}	
+			&:hover {
+	  			text-decoration: none;
+	  			color: $navTextColor;
+	  		}	
+		}
+	}
+	/*discography*/
+	.discography {
+		text-align: center;
+		&__heading {
+			@include make-sm-column(10);
+			@include make-sm-column-offset(1); 
+		}
+	}	
+	/*discography -- альбомы*/
+	.flex-columnMd {
+		display: flex;
+		flex-direction: column;
+	}	
+	.album {
+		@include make-sm-column(12);
+		text-align: left;
+		margin-bottom: 150px;
+		&__heading {
+			@include make-sm-column(8);
+			@include make-sm-column-offset(1);
+			order: 2;
+			margin-bottom: 50px;
+		}
+		&__date-title {
+			@include make-sm-column(10);
+			@include make-sm-column-offset(1);	
+			order: 1;
+			margin-bottom: 65px;
+		}
+		&__description {
+			@include make-sm-column(10);
+			@include make-sm-column-offset(1);
+			order: 3;
+		}
+		&__link {
+			margin: 50px auto 0;
+		}		
+	}
+/*Concert tours*/	
+	.concert-tours {
+		&__heading {
+			@include make-sm-column(12); 
+		}
+		&__header {
+			margin-left: auto;
+			margin-right: auto;
+		}	
+	}	
+	.tour {
+		&__heading {
+			@include make-sm-column(3);
+			@include make-sm-column-offset(1);
+		}
+		&__date-title {
+			@include make-sm-column(6);
+			@include make-sm-column-offset(1);
+		}
+		
+		&__description {
+			@include make-sm-column(9);
+			@include make-sm-column-offset(1);
+		}
+	}
+/*Latter compositions*/
+	.latter-compositions {
+		&__heading {
+			@include make-sm-column(10);
+			@include make-sm-column-offset(1); 
+		}
+	}	
+	.flex {
+		display: block;
+	}
+	.video {
+		@include make-sm-column(12);
+		&__info {
+			@include make-sm-column(12);
+			margin-bottom: 0;
+			&::before {
+			    top: 100%;
+			    left: 50%;
+			    border-width: 13px 11px  0 11px;
+			    border-color: $videoInfoBg transparent transparent transparent;
+			}
+		}
+		&__clips {
+			@include make-sm-column(12);
+			margin-bottom: 0;
+			padding: 0;
+		}
+		&__clip {
+			width: 100%;
+			height: 500px;
+		}
+		&__heading {
+			@include make-sm-column(10);
+			@include make-sm-column-offset(1);
+		}
+		&__date-title {
+			@include make-sm-column(8);
+			@include make-sm-column-offset(1);
+		}
+		&__description {
+			@include make-sm-column(10);
+			@include make-sm-column-offset(1);
+			padding: 0;
+		}
+		&__link {
+			@include make-sm-column(4);
+		}
+	}
+	.social-icons {
+		@include make-sm-column(7);
+	}
+	/*Slider*/
+	.slider {
+		&__label {
+			@include make-sm-column(2);
+			@include make-sm-column-offset(5);
+		}
+		&__heading {
+			@include make-sm-column(12);  
+		}
+		&__header {	
+			@include make-sm-column(12);
+		}	
+		&__header-description {
+			@include make-sm-column(8);
+			@include make-sm-column-offset(2);
+		}
+		&__years {
+			@include make-sm-column(4);
+			@include make-sm-column-offset(4); 
+		}
+		&__list {
+			@include make-sm-column(2);
+			@include make-sm-column-offset(5); 
+		}
+	}
+/*New tracks*/	
+	.new-tracks {
+		&__col {
+			@include make-sm-column(12);
+		}
+		&__col--margin {
+			border-right: none;
+		}
+		&__heading {
+			@include make-sm-column(10);
+			@include make-sm-column-offset(1);
+		}
+		&__date-title {
+			@include make-sm-column(10);
+			@include make-sm-column-offset(1);
+		}
+		&__description {
+			@include make-sm-column(10);
+			@include make-sm-column-offset(1);
+		}
+		&__description-txt {
+			@include make-sm-column(12);
+			padding: 0;
+		}
+		&__number {
+			@include make-sm-column(2);
+			@include make-sm-column-offset(9);
+		}
+		&__number--marginTopThreeMd {
+			margin-top: 120px;
+		}
+		&__number--marginTopSevenMd {
+			margin-top: 65px;
+		}
+	}	
+/*Upcoming events*/	
+	.upcoming-events {
+		&__col {
+			@include make-sm-column(7);
+			@include make-sm-column-offset(5);
+		}
+	}
+/*History*/
+	.history {
+		&__heading {
+			@include make-sm-column(12); 
+		}
+		&__header {
+			margin-left: auto;
+			margin-right: auto;
+		}	
+		&__header-description {
+			@include descriptionHeader(200px);
+		}
+		&__date--hidden {
+			display: none;
+		}
+		&__info {
+			@include make-sm-column(4);
+			@include make-sm-column-offset(4);
+		}
+	}
+	/*Contacts*/
+	.contacts {
+		&__heading {
+			@include make-sm-column(5);
+			@include make-sm-column-offset(2); 
+		}	
+		&__adress {
+			@include make-sm-column(7);
+			@include make-sm-column-offset(2);
+		}
+		&__form {
+			@include make-sm-column(7);
+			@include make-sm-column-offset(2);
+		}
+		&__socials {
+			@include make-sm-column(1);
+			@include make-sm-column-offset(1);
+		}
+	}		
+}

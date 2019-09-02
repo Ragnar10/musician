@@ -1,0 +1,55 @@
+@mixin ellipsis ($lines: 1, $line-height: $descriptionLineHeight) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: $line-height * $lines;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  text-overflow: -o-ellipsis-lastline;
+}
+@mixin sectionHeader($color: $headlineTextColor, $paddingTop: 65px) {	
+	display: inline-block;
+	padding: $paddingTop 22px 0;
+	font: $sectionHeaderFontSize $secondaryFont;
+	color: $color;   
+	text-transform: uppercase;
+	margin: 0;
+	position: relative;
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 1px;
+		background: $headlineTextColor;
+		width: 100%;
+		left: 0;
+		top: 75%;
+		z-index: -1;
+	}
+}	
+@mixin descriptionHeader($paddingBottom: 160px) {
+	color: $descriptionTextColor;
+	padding-top: 55px;
+	padding-bottom: $paddingBottom;
+	margin: 0;
+}
+@mixin linkForButton {
+		display: block;
+		width: 196px;
+		height: 56px;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+@mixin linkButton($bgColor: transparent, $txtTransform: uppercase, $border: none) {
+	display: block;
+	width: 196px;
+	height: 56px;
+	background-color: $bgColor;
+	font-family: $primaryFontBold;
+	color: $headlineTextColor;
+	text-transform: $txtTransform;
+	border: $border;
+	outline: none;
+}
